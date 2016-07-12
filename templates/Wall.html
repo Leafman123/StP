@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spoon The Prune</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+      <button type="button" class="close, text-center" data-dismiss="alert" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+      <!-- <strong>Title</strong> --> {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+    <style>
+        #abc {
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            display:none;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.59);
+
+            overflow:auto
+
+        }
+        p, h1{
+            text-align: center;
+            font-family: sans-serif;
+        }
+        #button{
+            background-color: rgba(221, 126, 63, 0.81);
+            color:lightgray;
+            -webkit-box-shadow: 0 5px 25px 2px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0 5px 25px 2px rgba(0,0,0,0.75);
+            box-shadow: 0 5px 25px 2px rgba(0,0,0,0.75);
+            border-radius: 5px;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+    <script>
+        function div_show() {
+            document.getElementById('abc').style.display = "block";
+        }
+        function div_hide(){
+            document.getElementById('abc').style.display = "none";
+        }
+    </script>
+</head>
+<body style="background-color: lightgray">
+<div id="abc">
+    <div style="width: 35%; background-color: ghostwhite; border-radius: 5px;text-align: center; margin: auto; margin-top: 10% ;">
+        <button style="float: right" onclick="div_hide()">X</button>
+        <h1>Message fun time</h1>
+        <br>
+         <form name="WallForm" action="/Wall" method="post">
+
+            <label>Email:<br><input type="email" name="Email" required></label><br>
+            <label>Message:<br><textarea name="Message" rows="4" cols="50" required></textarea></label> <br><br>
+             <input type="submit" value="Send" id="button">
+         </form>
+        <br>
+    </div>
+
+</div>
+<h1>Spoon The Prune. A website. Coming this summer (2016)</h1>
+<br>
+<p>In the meantime, be a dirty vandal and get your name on the wall by clicking this button </p>
+<p style="margin-bottom: 30px"><button id="button" onclick="div_show()">ORBLYFE</button></p>
+<p style="text-align: left; font-size: x-small; color: darkgrey">PLEASE SEND A MESSAGE.<br> IM GETTING SAD :(</p>
+<img src="../static/wall.png" style="width: 90%; margin-left: 5%; margin-right: 5%">
+
+</body>
+</html>
