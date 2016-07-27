@@ -15,15 +15,15 @@ class ConfigClass(object):
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL',     'sqlite:///basic_app.sqlite')
     CSRF_ENABLED = True
 
+
     # Flask-Mail settings
     MAIL_USERNAME =           os.getenv('MAIL_USERNAME',        'spoontheprune@gmail.com')
-    MAIL_PASSWORD =           os.getenv('MAIL_PASSWORD')
+    MAIL_PASSWORD =           os.getenv('MAIL_PASSWORD',        )
     MAIL_DEFAULT_SENDER =     os.getenv('MAIL_DEFAULT_SENDER',  '"MyApp" <noreply@example.com>')
     MAIL_SERVER =             os.getenv('MAIL_SERVER',          'smtp.gmail.com')
     MAIL_PORT =           int(os.getenv('MAIL_PORT',            '587'))
     MAIL_USE_SSL =        int(os.getenv('MAIL_USE_SSL',         False))
     MAIL_USE_TLS = int(os.getenv('MAIL_USE_TLS',         True))
-
     # Flask-User settings
     USER_APP_NAME        = "AppName"                # Used by email templates
 
@@ -56,6 +56,7 @@ def create_app():
         active = db.Column('is_active', db.Boolean(), nullable=False, server_default='0')
         first_name = db.Column(db.String(100), nullable=False, server_default='')
         last_name = db.Column(db.String(100), nullable=False, server_default='')
+        points = db.column(db.Integer)
 
     # Create all database tables
     db.create_all()
@@ -96,6 +97,5 @@ create_app()
 
 # Start development web server
 if __name__=='__main__':
-    # create_app()
     if 'liveconsole' not in gethostname():
         app.run()
