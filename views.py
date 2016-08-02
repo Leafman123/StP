@@ -10,12 +10,12 @@ def test():
     return render_template("test.html")
 
 
-@app.route('/Home')
+@app.route('/home')
 def home():
     return render_template("home.html")
 
 
-@app.route('/Wall', methods=['POST', 'GET'])
+@app.route('/wall', methods=['POST', 'GET'])
 def wall():
 
     if request.method == 'POST':
