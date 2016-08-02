@@ -25,12 +25,12 @@ def wall():
             a_file.write(message + ":" + email + "\n")
         flash("Ill put your name on when I can be bothered. So chill out man.", category='info')
 
-    return render_template("old/wall.html")
+    return render_template("wall.html")
 
 
 @app.route('/')
 def startUp():
-    return render_template("old/startup_page.html")
+    return render_template("startup_page.html")
 
 
 if __name__ == '__main__':
