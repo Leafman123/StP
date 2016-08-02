@@ -1,7 +1,7 @@
 import os
 from _socket import gethostname
 
-from flask import Flask, render_template_string
+from flask import Flask, render_template_string, render_template
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 from flask_user import login_required, UserManager, UserMixin, SQLAlchemyAdapter
@@ -66,31 +66,19 @@ def create_app():
     user_manager = UserManager(db_adapter, app)     # Initialize Flask-User
 
     # The Home page is accessible to anyone
-    @app.route('/')
+    @app.route('/home')
     def home_page():
-        return render_template_string("""
-            {% extends "base.html" %}
-            {% block content %}
-                <h2>Home page</h2>
-                <p>This page can be accessed by anyone.</p><br/>
-                <p><a href={{ url_for('home_page') }}>Home page</a> (anyone)</p>
-                <p><a href={{ url_for('members_page') }}>Members page</a> (login required)</p>
-            {% endblock %}
-            """)
+        return render_template('home.html', title = 'Home')
 
-    # The Members page is only accessible to authenticated users
-    @app.route('/members')
-    @login_required                                 # Use of @login_required decorator
-    def members_page():
-        return render_template_string("""
-            {% extends "base.html" %}
-            {% block content %}
-                <h2>Members page</h2>
-                <p>This page can only be accessed by authenticated users.</p><br/>
-                <p><a href={{ url_for('home_page') }}>Home page</a> (anyone)</p>
-                <p><a href={{ url_for('members_page') }}>Members page</a> (login required)</p>
-            {% endblock %}
-            """)
+    @app.route('/')
+    def startup():
+        return render_template('startup_page_new.html')
+
+    @app.route('/prune')
+    def prune_spin():
+        return render_template ('prune_spin.html')
+        # The Members page is only accessible to authenticated users
+
 
     return app
 create_app()

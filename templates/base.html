@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if title %}
-    <title>{{ title }} at sPOOntheprune</title>
+    <title>{{ title }}, at spoontheprune</title>
     {% else %}
     <title>You forgot the title</title>
     {% endif %}
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4 text-center">
-                <a href="/prune"><h1 class=no-margins">Masdasdp</h1></a>
+                <a style="cursor: default" href="/prune"><img src="../static/logo.png" class=no-margins"></a>
             </div>
             <div class="col-md-4 text-right">
             {% if call_or_get(current_user.is_authenticated) %}
