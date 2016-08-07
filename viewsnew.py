@@ -1,3 +1,8 @@
+#todo main pages like pics music est. as well as random pages in a map site. like going into a rabithole.
+
+
+
+
 import os
 from _socket import gethostname
 
@@ -73,6 +78,36 @@ def create_app():
     @app.route('/')
     def startup():
         return render_template('startup_page_new.html')
+
+    #videos
+
+    @app.route('/videos')
+    def videos():
+        return render_template('videos.html')
+
+    #flamenco
+
+    @app.route('/flamenco')
+    def flamenco():
+        return render_template('')
+
+    #music
+
+
+    @app.route('/music')
+    def music():
+        return render_template('')
+
+
+    #pictures
+
+    @app.route('/pictures')
+    def pictures():
+        return render_template('pictures.html')
+
+
+
+
 
     @app.route('/prune')
     def prune_spin():

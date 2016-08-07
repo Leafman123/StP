@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if title %}
-    <title>{{ title }}, at spoontheprune</title>
+        <title>{{ title }}, at spoontheprune</title>
     {% else %}
-    <title>You forgot the title</title>
+        <title>You forgot the title</title>
     {% endif %}
 
     <!-- Bootstrap -->
@@ -15,12 +15,11 @@
     <link href="/static/stylesheet.css" rel="stylesheet">
     <!-- In-lining styles to avoid needing a separate .css file -->
     <style>
-        hr { border-color: #cccccc; margin: 0; }
-        .no-margins { margin: 0px; }
-        .with-padding {padding: 10px}
-        .with-margins { margin: 10px; }
-        .rounded { border-radius: 10px; background-color: darkgray;}
-        .col-centered { float: none; margin: 0 auto; }
+        hr {
+            border-color: rebeccapurple;
+            margin: 0;
+        }
+
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,66 +28,78 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
-  </head>
+</head>
 
 
 <body>
-    {% block body %}
-    <div id="header-div" class="clearfix with-margins">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 text-center">
-                <a style="cursor: default" href="/prune"><img src="../static/logo.png" class=no-margins"></a>
+{% block body %}
+    <div id="page-wrap">
+        <div id="header-wrap">
+            <div id="header-div" class="clearfix with-padding">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center">
+                        <a style="cursor: default" href="/prune"><img src="../static/logo.png" class=no-margins"></a>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        {% if call_or_get(current_user.is_authenticated) %}
+                            <a href="{{ url_for('user.profile') }}">{{ current_user.username }}</a>
+                            &nbsp; | &nbsp;
+                            <a href="{{ url_for('user.logout') }}">Sign out</a>
+                        {% else %}
+                            <a href="{{ url_for('user.login') }}">Sign in</a>
+                        {% endif %}
+                    </div>
+                </div>
+
             </div>
-            <div class="col-md-4 text-right">
-            {% if call_or_get(current_user.is_authenticated) %}
-                <a href="{{ url_for('user.profile') }}">{{ current_user.username }}</a>
-                &nbsp; | &nbsp;
-                <a href="{{ url_for('user.logout') }}">Sign out</a>
-            {% else %}
-                <a href="{{ url_for('user.login') }}">Sign in</a>
-            {% endif %}
-            </div>
+            {% block menu %}
+                <div id="menu-div" class="with-margins text-center">
+
+                    <a href="/home">Home</a>
+                    <a href="/videos">Videos</a>
+                    <a href="/pictures">Pictures</a>
+                </div>
+            {% endblock %}
+            <hr class="no-margins"/>
+        <hr>
         </div>
-
-    </div>
-    {% block menu %}
-    <div id="menu-div" class="with-margins text-center">
-        <a href="/home">Home</a>
-    </div>
-    {% endblock %}
-    <hr class="no-margins"/>
-
-    <div id="main-div" class="with-padding ">
-    {# One-time system messages called Flash messages #}
-    {% block flash_messages %}
-        {%- with messages = get_flashed_messages(with_categories=true) -%}
-            {% if messages %}
-                {% for category, message in messages %}
-                    {% if category=='error' %}
-                        {% set category='danger' %}
+        <div class="col-md-2"></div>
+        <div id="main-div" class="with-padding col-md-8">
+            {# One-time system messages called Flash messages #}
+            {% block flash_messages %}
+                {%- with messages = get_flashed_messages(with_categories=true) -%}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            {% if category=='error' %}
+                                {% set category='danger' %}
+                            {% endif %}
+                            <div class="alert alert-{{ category }}">{{ message|safe }}</div>
+                        {% endfor %}
                     {% endif %}
-                    <div class="alert alert-{{category}}">{{ message|safe }}</div>
-                {% endfor %}
-            {% endif %}
-        {%- endwith %}
-    {% endblock %}
+                {%- endwith %}
+            {% endblock %}
 
-    {% block main %}{% block content %}{% endblock %}{% endblock %}
+            {% block main %}{% block content %}{% endblock %}{% endblock %}
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-2"></div>
     </div>
 
-    <br/>
-    <hr class="no-margins"/>
-    <div id="footer-div" class="clearfix with-margins">
-        <div class="pull-left">Spoon the Prune v1.0</div>
-        <div class="pull-right">&copy; Now - WhenNever</div>
+    <div id="footer-div" class="clearfix">
+        <div class="container with-margins">
+            <div class="pull-left">Spoon the Prune v1.0</div>
+            <div class="pull-right">&copy; Now - WhenNever</div>
+        </div>
     </div>
-    {% endblock %}
+{% endblock %}
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
 </html>

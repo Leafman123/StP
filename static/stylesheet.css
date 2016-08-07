@@ -1,1 +1,58 @@
+#main-div {
+    background-image: url("/static/background.png");
+    background-repeat: repeat;
+    -webkit-box-shadow: inset 0px -96px 67px -63px rgba(0, 0, 0, 1);
+    -moz-box-shadow: inset 0px -96px 67px -63px rgba(0, 0, 0, 1);
+    box-shadow: inset 0px -96px 67px -63px rgba(0, 0, 0, 1);
+}
 
+html, body {
+    height: 100%;
+}
+
+#page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -60px;
+}
+
+#page-wrap:after {
+    content: "";
+    display: block;
+    width: 50px;
+}
+
+#footer-div, .page-wrap:after {
+    background: black;
+    color: ghostwhite;
+    height: 60px;
+}
+
+#header-wrap {
+    background: white;
+}
+
+body {
+    background: black;
+}
+
+.no-margins {
+    margin: 0px;
+}
+
+.with-padding {
+    padding: 10px
+}
+
+.with-margins {
+    margin: 10px;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
