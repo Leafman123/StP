@@ -26,13 +26,13 @@ class ConfigClass(object):
     # Flask-Mail settings
     MAIL_USERNAME = os.getenv('MAIL_USERNAME', 'spoontheprune@gmail.com')
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD', )
-    MAIL_DEFAULT_SENDER = os.getenv('MAIL_DEFAULT_SENDER', '"MyApp" <noreply@example.com>')
+    MAIL_DEFAULT_SENDER = os.getenv('MAIL_DEFAULT_SENDER', '"Spoon The Prune" <noreply@example.com>')
     MAIL_SERVER = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
     MAIL_PORT = int(os.getenv('MAIL_PORT', '587'))
     MAIL_USE_SSL = int(os.getenv('MAIL_USE_SSL', False))
     MAIL_USE_TLS = int(os.getenv('MAIL_USE_TLS', True))
     # Flask-User settings
-    USER_APP_NAME = "AppName"  # Used by email templates
+    USER_APP_NAME = "Spoon The Prune"  # Used by email templates
 
 
 def create_app():
