@@ -1,24 +1,21 @@
 {% extends "base.html" %}
+{% from 'flask_user/_macros.html' import pictureframe %}
 {% block content %}
     <h1 class="center-text">Pretty Pictures</h1>
-{#    <p>Pictures. It is suggested that you use your eyes for these ones.</p>#}
-{#    <br>#}
-{#    <hr>#}
-{#    <br>#}
-{#    <div class="item-container col-md-3 center-text ">#}
-{#        asd#}
-{#    </div>#}
-{##}
-{#    <div class="col-md-1"></div>#}
-{##}
-{#    <div class="item-container col-md-4 center-text ">#}
-{#        asd#}
-{#    </div>#}
-{##}
-{#    <div class="col-md-1"></div>#}
-{##}
-{#    <div class="item-container col-md-3 center-text ">#}
-{#        fsf#}
-{#    </div>#}
-<img src="../static/comingSoon.png" class="col-centered" style="display: block">
+    <p>Pictures. It is suggested that you use your eyes for these ones.</p>
+    <br>
+    <hr>
+    <br>
+
+    {{ pictureframe(description='Flamenco is whatever you want him to be. Or wherever you want him to be. is he in the deepest depths of your mind? maybe.', link='/flamenco' , title= 'Mr Flamenco', image_link = '/static/pictures/flamenco/mrflamenco.bmp', bootstrap_size='3') }}
+
+    <div class="col-md-1"><br></div>
+
+    {{ pictureframe(bootstrap_size='4')}}
+
+
+    <div class="col-md-1"><br></div>
+
+    {{ pictureframe(bootstrap_size='3') }}
+
 {% endblock %}

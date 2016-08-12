@@ -12,7 +12,7 @@
         {% endif %}
     </div>
 {%- endmacro %}
- 
+
 {% macro render_checkbox_field(field, label=None) -%}
     {% if not label %}{% set label=field.label.text %}{% endif %}
     <div class="checkbox">
@@ -21,12 +21,13 @@
         </label>
     </div>
 {%- endmacro %}
- 
+
 {% macro render_radio_field(field) -%}
     {% for value, label, checked in field.iter_choices() %}
         <div class="radio">
             <label>
-                <input type="radio" name="{{ field.id }}" id="{{ field.id }}" value="{{ value }}"{% if checked %} checked{% endif %}>
+                <input type="radio" name="{{ field.id }}" id="{{ field.id }}" value="{{ value }}"{% if checked %}
+                       checked{% endif %}>
                 {{ label }}
             </label>
         </div>
@@ -36,7 +37,32 @@
 {% macro render_submit_field(field, label=None, tabindex=None) -%}
     {% if not label %}{% set label=field.label.text %}{% endif %}
     {#<button type="submit" class="form-control btn btn-default btn-primary">{{label}}</button>#}
-    <input type="submit" class="btn btn-default btn-primary" value="{{label}}"
+    <input type="submit" class="btn btn-default btn-primary" value="{{ label }}"
            {% if tabindex %}tabindex="{{ tabindex }}"{% endif %}
-           >
+    >
 {%- endmacro %}
+
+{% macro pictureframe (description=none, link=none , title= none, image_link = '../static/comingSoon.png', bootstrap_size=none) %}
+
+    <a {% if link %}
+        href="{{ link }}"
+    {% endif %}
+        style="display: block">
+        <div class="picture-container col-md-{{ bootstrap_size }} center-text ">
+            <div class="with-margins">
+                {% if title %}
+                    <h2 class="no-margins">{{ title }}</h2>
+                    <br>
+                {% endif %}
+                <img src="{{ image_link }}">
+                <br>
+            </div>
+            {% if description %}
+                <div class="picture-description">
+                    <p class="no-margins">{{ description }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </a>
+
+{% endmacro %}

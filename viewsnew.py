@@ -89,7 +89,7 @@ def create_app():
 
     @app.route('/videos/fast')
     def videos_fast():
-        return render_template('video_base.html', video_title='FAST', video='https://www.youtube.com/embed/E_ueE1kaUHI',
+        return render_template('video_base.html',title='Fast', video_title='FAST', video='https://www.youtube.com/embed/E_ueE1kaUHI',
                                description='A story of a boy and his relentless and sometimes tragic dream. A dream of speed. A dream of FAST.')
 
     @app.route('/videos/sik-points')
@@ -110,10 +110,9 @@ def create_app():
 
     @app.route('/flamenco')
     def flamenco():
-        return render_template('')
+        return render_template('flamenco.html', title="Flamenco")
 
     # music
-
 
     @app.route('/music')
     def music():
@@ -144,7 +143,7 @@ def create_app():
                 a_file.write(message + ":" + current_user.username  + "\n")
             flash("Thanks for the message. Im sure it was great + I will read it at some point. ", category='info')
 
-        return render_template("contact.html")
+        return render_template("contact.html", title='contact')
 
 
     @app.route('/prune')
