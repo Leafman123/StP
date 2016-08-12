@@ -106,7 +106,7 @@ def create_app():
     def videos_equation():
         return render_template('videoEquation.html')
 
-    # flamenco
+    # Flamenco
 
     @app.route('/flamenco')
     def flamenco():
