@@ -1,10 +1,11 @@
 {% extends "base.html" %}
-{% block content%}
-<div style="text-align: center">
-    <h2>{{ video_title }}</h2>
-    <video controls>
-        <source src={{ video }}, type="video/mp4">
-    </video>
-    <p>{{ description }}</p>
-</div>
+{% block content %}
+    <div style="text-align: center">
+        <h2 class="with-margins">{{ video_title }}</h2>
+        <div class="video-container"><iframe width=auto height=auto src="{{ video }}"></iframe></div>
+        <br>
+        <hr>
+        <br>
+        <div class="description_box"><p>{{ description }}</p></div>
+    </div>
 {% endblock %}

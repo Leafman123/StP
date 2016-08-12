@@ -1,4 +1,5 @@
 #main-div {
+    padding-bottom: 70px;
     background-image: url("/static/background.png");
     background-repeat: repeat;
     -webkit-box-shadow: inset 0px -96px 67px -63px rgba(0, 0, 0, 1);
@@ -19,13 +20,29 @@ html, body {
 #page-wrap:after {
     content: "";
     display: block;
-    width: 50px;
+    /*width: 50px;*/
 }
 
 #footer-div, .page-wrap:after {
     background: black;
     color: ghostwhite;
     height: 60px;
+    width: 100%;
+}
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
 }
 
 #header-wrap {
@@ -48,6 +65,10 @@ body {
     margin: 10px;
 }
 
+.no-padding {
+    padding: 0;
+}
+
 .rounded {
     border-radius: 10px;
 }
@@ -55,4 +76,116 @@ body {
 .col-centered {
     float: none;
     margin: 0 auto;
+}
+
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center-text {
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline
+}
+
+.description_box {
+    background: rgba(163, 163, 163, 0.76);
+    width: 90%;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+#content-wrap{margin-bottom: 50px;}
+
+.item-container {
+    background: rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.menu {
+    list-style-type: none;
+    height: 30px;
+    text-align: center;
+    width: 100%; /* new */
+    display: table;
+
+}
+
+.menu-item a {
+    display: block;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menu-item a:hover {
+    background: lightcyan;
+    text-decoration: none;
+}
+
+.menu-item {
+    margin-left: 50px;
+
+    display: table-cell;
+}
+
+.bouncing-container {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bouncing-container p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: left;
+    /* Apply animation to this element */
+    -moz-animation: example5 5s linear infinite alternate;
+    -webkit-animation: example5 5s linear infinite alternate;
+    animation: example5 5s linear infinite alternate;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes example5 {
+    0% {
+        -moz-transform: translateX(70%);
+    }
+    100% {
+        -moz-transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes example5 {
+    0% {
+        -webkit-transform: translateX(70%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+@keyframes example5 {
+    0% {
+        -moz-transform: translateX(70%); /* Firefox bug fix */
+        -webkit-transform: translateX(70%); /* Firefox bug fix */
+        transform: translateX(70%);
+    }
+    100% {
+        -moz-transform: translateX(0%); /* Firefox bug fix */
+        -webkit-transform: translateX(0%); /* Firefox bug fix */
+        transform: translateX(0%);
+    }
 }

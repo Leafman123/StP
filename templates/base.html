@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if title %}
-        <title>{{ title }}, at spoontheprune</title>
+        <title>{{ title }} - spoontheprune</title>
     {% else %}
         <title>You forgot the title</title>
     {% endif %}
@@ -36,12 +36,12 @@
     <div id="page-wrap">
         <div id="header-wrap">
             <div id="header-div" class="clearfix with-padding">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4 text-center">
+
+
+                    <div class="center-text">
                         <a style="cursor: default" href="/prune"><img src="../static/logo.png" class=no-margins"></a>
-                    </div>
-                    <div class="col-md-4 text-right">
+
+                    <span style="position: absolute; right: 5px; top:5px;">
                         {% if call_or_get(current_user.is_authenticated) %}
                             <a href="{{ url_for('user.profile') }}">{{ current_user.username }}</a>
                             &nbsp; | &nbsp;
@@ -49,20 +49,28 @@
                         {% else %}
                             <a href="{{ url_for('user.login') }}">Sign in</a>
                         {% endif %}
+                    </span>
                     </div>
-                </div>
 
             </div>
             {% block menu %}
-                <div id="menu-div" class="with-margins text-center">
-
-                    <a href="/home">Home</a>
-                    <a href="/videos">Videos</a>
-                    <a href="/pictures">Pictures</a>
+                <div id="menu-div" , class="no-margins">
+                    <ul class="menu no-margins no-padding">
+                        <li class="menu-item"><a href="/home" ,>Home</a></li>
+                        <li class="menu-item"><a href="/videos" ,>Videos</a></li>
+                        <li class="menu-item"><a href="/pictures" ,>Pictures</a></li>
+                        <li class="menu-item"><a href="/music" ,>Musika</a></li>
+                        <li class="menu-item"><a href="/words" ,>Words</a></li>
+                        {% if call_or_get(current_user.is_authenticated) %}
+                            <li class="menu-item"><a href="/contact" ,>SendMeStuff</a></li>
+                        {% endif %}
+                    </ul>
                 </div>
+                <hr class="no-margins"/>
             {% endblock %}
-            <hr class="no-margins"/>
-        <hr>
+
+
+            <hr>
         </div>
         <div class="col-md-2"></div>
         <div id="main-div" class="with-padding col-md-8">
@@ -81,15 +89,14 @@
             {% endblock %}
 
             {% block main %}{% block content %}{% endblock %}{% endblock %}
-            <br>
-            <br>
-            <br>
+
+
         </div>
         <div class="col-md-2"></div>
     </div>
 
     <div id="footer-div" class="clearfix">
-        <div class="container with-margins">
+        <div class="container">
             <div class="pull-left">Spoon the Prune v1.0</div>
             <div class="pull-right">&copy; Now - WhenNever</div>
         </div>
