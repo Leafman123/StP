@@ -1,5 +1,6 @@
 # todo main pages like pics music est. as well as random pages in a map site. like going into a rabithole.
 import datetime
+import json
 import os
 from _socket import gethostname
 
@@ -38,7 +39,7 @@ class ConfigClass(object):
 def captcha_test(request):
     payload = {'secret': os.getenv('CAPTCHA_SECRET'), 'response': request.values['g-recaptcha-response'] }
     g_result = requests.post('https://www.google.com/recaptcha/api/siteverify', payload )
-    return '"success": true,' in g_result.text
+    return json.loads(g_result.text)["success"]
 
 
 def create_app():
