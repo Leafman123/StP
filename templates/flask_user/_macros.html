@@ -42,27 +42,55 @@
     >
 {%- endmacro %}
 
-{% macro pictureframe (description=none, link=none , title= none, image_link = '../static/comingSoon.png', bootstrap_size=none) %}
+{% macro pictureframe (image_id = none,description=none, link=none , title= none, image_link = '../static/comingSoon.png', bootstrap_size=none) %}
 
     <a {% if link %}
         href="{{ link }}"
     {% endif %}
-        style="display: block">
-        <div class="picture-container col-md-{{ bootstrap_size }} center-text " {% if link %}style="background-color: #b3ffff" {% endif %}>
-            <div class="with-margins">
-                {% if title %}
-                    <h3 class="no-margins" >{{ title }}</h3>
-                    <br>
-                {% endif %}
-                <img src="{{ image_link }}">
-                <br>
-            </div>
-            {% if description %}
-                <div class="picture-description">
-                    <p class="no-margins">{{ description }}</p>
-                </div>
+            {% if not link and image_link != '../static/comingSoon.png' %}
+        href='#' data-toggle="modal" data-target="#{{ image_id }}"
             {% endif %}
+        style="display: block">
+        <div class=" col-md-{{ bootstrap_size }} center-text">
+            <div class="picture-container" {% if link %}style="background-color: #b3ffff" {% endif %}>
+                <div class="with-margins">
+                    {% if title %}
+                        <h3 class="no-margins">{{ title }}</h3>
+                        <br>
+                    {% endif %}
+                    <img src="{{ image_link }}">
+                    <br>
+                </div>
+                {% if description %}
+                    <div class="picture-description">
+                        <p class="no-margins">{{ description }}</p>
+                    </div>
+                {% endif %}</div>
+
         </div>
     </a>
+
+    <div id="{{ image_id }}" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{ title }}</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ image_link }}" style="width: 100%">
+                </div>
+                <div class="modal-footer">
+                    <p>{{ description }}</p>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 
 {% endmacro %}

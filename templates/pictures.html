@@ -3,19 +3,13 @@
 {% block content %}
     <h1 class="center-text">Pretty Pictures</h1>
     <p>Pictures. It is suggested that you use your eyes for these ones.</p>
+    <p>ps. blue ones are albums and you can click on um</p>
     <br>
     <hr>
     <br>
 
-    {{ pictureframe(description='Flamenco is whatever you want him to be. Or wherever you want him to be. is he in the deepest depths of your mind? maybe.', link='/flamenco' , title= 'Mr Flamenco', image_link = '/static/pictures/Flamenco/mrflamenco.bmp', bootstrap_size='3') }}
-
-    <div class="col-md-1"><br></div>
-
-    {{ pictureframe(description='By Sam.T', title= 'Stop that', bootstrap_size='4', image_link = '/static/pictures/stopthat.jpg')}}
-
-
-    <div class="col-md-1"><br></div>
-
-    {{ pictureframe(bootstrap_size='3') }}
+    {{ pictureframe(image_id="flamenco1",description='Flamenco is whatever you want him to be. Or wherever you want him to be. is he in the deepest depths of your mind? maybe.', link='/flamenco' , title= 'Mr Flamenco', image_link = '/static/pictures/Flamenco/mrflamenco.bmp', bootstrap_size='4') }}
+    {{ pictureframe(image_id="stopthat",description='By Sam.T', title= 'Stop that', bootstrap_size='4', image_link = '/static/pictures/stopthat.jpg')}}
+    {{ pictureframe(bootstrap_size='4') }}
 
 {% endblock %}

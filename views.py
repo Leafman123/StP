@@ -4,6 +4,7 @@ import json
 import os
 from _socket import gethostname
 
+import flask_user
 import requests
 from flask import Flask, render_template_string, render_template, request, flash, current_app, url_for, redirect
 from flask.ext.user.views import _send_registered_email, _endpoint_url, _do_login_user
@@ -209,7 +210,7 @@ def create_app():
                     raise
 
             # Send user_registered signal
-            signals.user_registered.send(current_app._get_current_object(),
+            flask_user.signals.user_registered.send(current_app._get_current_object(),
                                          user=user,
                                          user_invite=user_invite)
 
@@ -247,7 +248,7 @@ def create_app():
 
     @app.route('/')
     def startup():
-        return render_template('startup_page_new.html')
+        return render_template('startup_page.html')
 
     # videos
 
