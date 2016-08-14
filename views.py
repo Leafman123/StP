@@ -7,6 +7,8 @@ from _socket import gethostname
 import flask_user
 import requests
 from flask import Flask, render_template_string, render_template, request, flash, current_app, url_for, redirect
+from flask.ext.mobility.decorators import mobile_template
+from flask_mobility import Mobility
 from flask.ext.user.views import _send_registered_email, _endpoint_url, _do_login_user
 from flask_mail import Mail, signals
 from flask_sqlalchemy import SQLAlchemy
@@ -15,7 +17,7 @@ from flask.ext.login import current_user
 
 
 app = Flask(__name__)
-
+Mobility(app)
 
 # Use a Class-based config to avoid needing a 2nd file
 # os.getenv() enables configuration through OS environment variables
@@ -247,8 +249,9 @@ def create_app():
 
 
     @app.route('/')
-    def startup():
-        return render_template('startup_page.html')
+    @mobile_template('{mobile/}startup_page.html')
+    def startup(template):
+        return render_template(template)
 
     # videos
 
