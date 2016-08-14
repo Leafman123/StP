@@ -48,10 +48,10 @@
         href="{{ link }}"
     {% endif %}
         style="display: block">
-        <div class="picture-container col-md-{{ bootstrap_size }} center-text ">
+        <div class="picture-container col-md-{{ bootstrap_size }} center-text " {% if link %}style="background-color: #b3ffff" {% endif %}>
             <div class="with-margins">
                 {% if title %}
-                    <h2 class="no-margins">{{ title }}</h2>
+                    <h3 class="no-margins" >{{ title }}</h3>
                     <br>
                 {% endif %}
                 <img src="{{ image_link }}">
