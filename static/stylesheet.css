@@ -169,6 +169,23 @@ h2 {
     display: table-cell;
 }
 
+.menu-item-mobile:hover {
+    background: lightcyan;
+}
+
+.menu-item-mobile a{
+    display: block;
+}
+
+.menu-item-mobile {
+    font-size: 5vw;
+    padding : 1.5vh;
+    width: 100%;
+    margin-left: 0;
+}
+
+a:hover {text-decoration: none}
+
 .bouncing-container {
     height: 50px;
     overflow: hidden;
@@ -221,5 +238,8 @@ h2 {
 }
 
 a div {
-    color: black
+    color: black;
+    text-shadow: none;
 }
+
+a{text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);}
