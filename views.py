@@ -253,6 +253,11 @@ def create_app():
     def startup(template):
         return render_template(template)
 
+    #wormhole
+    @app.route('/worm')
+    def wormhole():
+        return render_template('worm1.html', title='Wormhole')
+
     # videos
 
     @app.route('/videos')
@@ -264,6 +269,13 @@ def create_app():
         return render_template('video_base.html', title='Fast', video_title='FAST',
                                video='https://www.youtube.com/embed/E_ueE1kaUHI',
                                description='A story of a boy and his relentless and sometimes tragic dream. A dream of speed. A dream of FAST.')
+
+    @app.route('/videos/trance')
+    def videos_trance():
+        return render_template('video_base.html', title='Trance', video_title='Trance',
+                               video='https://www.youtube.com/embed/y2QrxXwcvBU?rel=0&amp;controls=0',
+                               description="and that's how my house burnt down.")
+
 
     @app.route('/videos/sik-points')
     @login_required
@@ -279,12 +291,6 @@ def create_app():
     def videos_equation():
         return render_template('videoEquation.html')
 
-    # Flamenco
-
-    @app.route('/flamenco')
-    def flamenco():
-        return render_template('flamenco.html', title="Flamenco")
-
     # music
 
     @app.route('/music')
@@ -296,6 +302,15 @@ def create_app():
     @app.route('/pictures')
     def pictures():
         return render_template('pictures.html', title='Pictures')
+
+    @app.route('/flamenco')
+    def flamenco():
+        return render_template('flamenco.html', title="Flamenco")
+
+
+    @app.route('/pictures/school')
+    def schoolpic():
+        return render_template('school_pictures.html', title="Paint school")
 
     # words
 

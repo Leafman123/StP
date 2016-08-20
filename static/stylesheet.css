@@ -7,6 +7,9 @@
     box-shadow: inset 0px -96px 67px -63px rgba(0, 0, 0, 1);
 }
 
+.top-bottom-margin{margin-top: 10px;
+margin-bottom: 10px;}
+
 html, body {
     height: 100%;
 }
@@ -178,7 +181,7 @@ h2 {
 }
 
 .menu-item-mobile {
-    font-size: 5vmax;
+    font-size: 4vmax;
     padding : 1.5vh;
     width: 100%;
     margin-left: 0;

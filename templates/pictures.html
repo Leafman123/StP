@@ -7,9 +7,13 @@
     <br>
     <hr>
     <br>
-
-    {{ pictureframe(image_id="flamenco1",description='Flamenco is whatever you want him to be. Or wherever you want him to be. is he in the deepest depths of your mind? maybe.', link='/flamenco' , title= 'Mr Flamenco', image_link = '/static/pictures/Flamenco/mrflamenco.bmp', bootstrap_size='4') }}
+<div class="picture-row">    {{ pictureframe(image_id="flamenco1",description='Flamenco is whatever you want him to be. Or wherever you want him to be. is he in the deepest depths of your mind? maybe.', link='/flamenco' , title= 'Mr Flamenco', image_link = '/static/pictures/Flamenco/mrflamenco.bmp', bootstrap_size='4') }}
     {{ pictureframe(image_id="stopthat",description='By Sam.T', title= 'Stop that', bootstrap_size='4', image_link = '/static/pictures/stopthat.jpg')}}
-    {{ pictureframe(bootstrap_size='4') }}
+    {{ pictureframe(image_id="wall",description='Only decent people have got their name on this wall.',title= 'The wall', image_link = '/static/wall.png', bootstrap_size='4') }}
+    </div>
+<div class="picture-row"> {{ pictureframe(link="/pictures/school",description='Things done on paint from ict lessons', title= 'PAINT FROM SCHOOL', bootstrap_size='4', image_link = '/static/pictures/school/school.png')}}
+    {{ pictureframe(bootstrap_size='4')}}
+    {{ pictureframe(bootstrap_size='4')}}</div>
+
 
 {% endblock %}

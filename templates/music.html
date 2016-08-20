@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 {% block content%}
 <h1 class="center-text">Musika</h1>
-    <img src="../static/comingSoon.png" class="col-centered" style="display: block ; max-width: 100%"" >
+    <div class="item-container clearfix" style="position: relative">
+        <div class="col-md-8" >
+            <h2>Wavezone</h2>
+            <p>Made on a gutair made of waves. </p>
+            <audio controls style="display: block; max-width: 100%" >
+                <source src="/static/music/wavezone.mp3" type="audio/mpeg">
+            </audio>
+
+
+        </div>
+        <div class="col-md-4">
+            <img src="../static/music/wavezone.png" width=100% class="top-bottom-margin" style="margin-bottom: 30px">
+        </div>
+        <strong style="position: absolute; bottom: 0; display: block" class="with-margins">By Fen Bish</strong>
+    </div>
 {% endblock %}
