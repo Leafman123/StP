@@ -40,7 +40,7 @@
 
 
                     <div class="center-text">
-                        <a style="cursor: default" href="/prune"><img src="../static/logo.png" class=no-margins"></a>
+                        <a style="cursor: default" href="/prune"><img src="../static/logo.png" class="no-margins"></a>
 
                     <span style="position: absolute; right: 5px; top:5px;" class="item-container">
                         {% if call_or_get(current_user.is_authenticated) %}
@@ -55,7 +55,7 @@
 
             </div>
             {% block menu %}
-                <div id="menu-div" , class="no-margins">
+                <div id="menu-div"  class="no-margins">
                     <ul class="menu no-margins no-padding">
                         <li {% if not request.MOBILE %} class="menu-item" {% else %} class = "menu-item-mobile"{% endif %}><a href="/home" ,>Home</a></li>
                         <li {% if not request.MOBILE %} class="menu-item" {% else %} class = "menu-item-mobile"{% endif %}><a href="/videos" ,>Videos</a></li>
@@ -73,9 +73,11 @@
 
             <hr>
         </div>
-        {% if not request.MOBILE %}<div class="col-md-2"></div>{%  endif %}
 
-        <div id="main-div" class="with-padding {% if not request.MOBILE %}col-md-8"{%  endif %}>
+            <div class="col-md-2"></div>
+
+
+        <div id="main-div" class="with-padding col-md-8">
             {# One-time system messages called Flash messages #}
             {% block flash_messages %}
                 {%- with messages = get_flashed_messages(with_categories=true) -%}
@@ -94,7 +96,9 @@
 
 
         </div>
-        {% if not request.MOBILE %}<div class="col-md-2"></div>{%  endif %}
+
+            <div class="col-md-2"></div>
+
     </div>
 
     <div id="footer-div" class="clearfix">
