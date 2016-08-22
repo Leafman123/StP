@@ -247,4 +247,6 @@ a div {
     text-shadow: none;
 }
 
-a{text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);}
+a{
+    -webkit-text-stroke: 0.25px black;}
+

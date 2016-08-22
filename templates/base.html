@@ -39,7 +39,7 @@
             <div id="header-div" class="clearfix with-padding">
 
 
-                    <div class="center-text">
+                    <div class="center-text" style="font-size: ">
                         <a style="cursor: default" href="/prune"><img src="../static/logo.png" class="no-margins"></a>
 
                     <span style="position: absolute; right: 5px; top:5px;" class="item-container">
@@ -48,6 +48,8 @@
                             &nbsp; | &nbsp;
                             <a href="{{ url_for('user.logout') }}">Sign out</a>
                         {% else %}
+                            <a href="{{ url_for('user.register') }}">Register</a>
+                            &nbsp; | &nbsp;
                             <a href="{{ url_for('user.login') }}">Sign in</a>
                         {% endif %}
                     </span>
