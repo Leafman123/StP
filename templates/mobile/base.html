@@ -35,24 +35,24 @@
 <body>
 {% block body %}
     <div id="page-wrap">
-        <div id="header-wrap" class="clearfix">
-            <div id="header-div" class="clearfix with-padding">
-                <div style="width: 100%" class="item-container center-text">
-                    {% if call_or_get(current_user.is_authenticated) %}
-                        <a href="{{ url_for('user.profile') }}">{{ current_user.username }}</a>
-                        &nbsp; | &nbsp;
-                        <a href="{{ url_for('user.logout') }}">Sign out</a>
-                    {% else %}
-                        <a href="{{ url_for('user.register') }}">Register</a>
-                        &nbsp; | &nbsp;
-                        <a href="{{ url_for('user.login') }}">Sign in</a>
-                    {% endif %}
-                </div>
-                <br>
-                <div class="center-text">
-                    <a style="cursor: default" href="/prune"><img width=100% src="../static/logo.png"
-                                                                  class="no-margins"></a>
-                </div>
+    <div id="header-wrap" class="clearfix">
+        <div id="header-div" class="clearfix with-padding">
+            <div style="width: 100%" class="item-container center-text">
+                {% if call_or_get(current_user.is_authenticated) %}
+                    <a href="{{ url_for('user.profile') }}">{{ current_user.username }}</a>
+                    &nbsp; | &nbsp;
+                    <a href="{{ url_for('user.logout') }}">Sign out</a>
+                {% else %}
+                    <a href="{{ url_for('user.register') }}">Register</a>
+                    &nbsp; | &nbsp;
+                    <a href="{{ url_for('user.login') }}">Sign in</a>
+                {% endif %}
+            </div>
+            <br>
+            <div class="center-text">
+                <a style="cursor: default" href="/prune"><img width=100% src="../static/logo.png"
+                                                              class="no-margins"></a>
+            </div>
             {% block menu %}
                 <div id="menu-div" class="no-margins">
                     <ul class="menu no-margins no-padding">
@@ -75,29 +75,30 @@
             {% endblock %}
 
 
-            <hr>
-        </div>
-
-        <div id="main-div" class="with-padding col-md-8">
-            {# One-time system messages called Flash messages #}
-            {% block flash_messages %}
-                {%- with messages = get_flashed_messages(with_categories=true) -%}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            {% if category=='error' %}
-                                {% set category='danger' %}
-                            {% endif %}
-                            <div class="alert alert-{{ category }}">{{ message|safe }}</div>
-                        {% endfor %}
-                    {% endif %}
-                {%- endwith %}
-            {% endblock %}
-
-            {% block main %}{% block content %}{% endblock %}{% endblock %}
-
 
         </div>
     </div>
+    <hr>
+    <div id="main-div" class="with-padding col-md-8">
+        {# One-time system messages called Flash messages #}
+        {% block flash_messages %}
+            {%- with messages = get_flashed_messages(with_categories=true) -%}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category=='error' %}
+                            {% set category='danger' %}
+                        {% endif %}
+                        <div class="alert alert-{{ category }}">{{ message|safe }}</div>
+                    {% endfor %}
+                {% endif %}
+            {%- endwith %}
+        {% endblock %}
+
+        {% block main %}{% block content %}{% endblock %}{% endblock %}
+
+
+    </div>
+
 
     <div id="footer-div" class="clearfix">
         <div class="container">
