@@ -262,17 +262,17 @@ def create_app():
 
     @app.route('/videos')
     def videos():
-        return render_template('videos.html', title='videos')
+        return render_template('videos/videos.html', title='videos')
 
     @app.route('/videos/fast')
     def videos_fast():
-        return render_template('video_base.html', title='Fast', video_title='FAST',
+        return render_template('videos/video_base.html', title='Fast', video_title='FAST',
                                video='https://www.youtube.com/embed/E_ueE1kaUHI',
                                description='A story of a boy and his relentless and sometimes tragic dream. A dream of speed. A dream of FAST.')
 
     @app.route('/videos/trance')
     def videos_trance():
-        return render_template('video_base.html', title='Trance', video_title='Trance',
+        return render_template('videos/video_base.html', title='Trance', video_title='Trance',
                                video='https://www.youtube.com/embed/y2QrxXwcvBU?rel=0&amp;controls=0',
                                description="and that's how my house burnt down.")
 
@@ -280,16 +280,22 @@ def create_app():
     @app.route('/videos/sik-points')
     @login_required
     def videos_sikPoints():
-        return render_template('sikpoints.html')
+        return render_template('videos/sikpoints.html')
 
     @app.route('/videos/test')
     def videos_test():
-        return render_template('video_base.html', video_title='Test', video='/static/videos/test.mp4',
+        return render_template('videos/video_base.html', video_title='Test', video='/static/videos/test.mp4',
                                description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis odio id mauris scelerisque, at pharetra tellus lobortis. Proin at diam eget est imperdiet pellentesque at ut elit. Aliquam vulputate sem eu tellus dignissim, sit amet tincidunt lorem ornare. Integer lacinia ligula ac tristique pellentesque. Integer tortor nisi, sollicitudin id sodales a, bibendum eget tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Praesent id nulla feugiat, eleifend felis ac, placerat arcu. Curabitur vitae consequat neque. Sed malesuada odio sit amet egestas laoreet. Proin vel sollicitudin enim. Nam blandit sed eros et pretium. Etiam at aliquam nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Pellentesque sem dolor, pulvinar imperdiet quam malesuada, faucibus tempor velit. Mauris metus odio, eleifend et eros et, eleifend sagittis enim. Cras semper risus ac lorem convallis, nec hendrerit eros vestibulum. Sed eget erat a erat dictum commodo. Vestibulum ac accumsan odio. Nunc scelerisque tortor turpis. Duis sodales fringilla finibus. Vivamus convallis convallis dolor non ultricies. Ut porttitor vehicula leo quis sodales. Pellentesque convallis ullamcorper rhoncus. Vivamus sed quam vel massa malesuada consectetur. Morbi porta lacus et velit laoreet egestas. Curabitur vehicula odio a congue rhoncus.')
+
+    @app.route('/videos/ben-beat')
+    def videos_ben_beat ():
+        return render_template('videos/video_base.html', video_title='Ben Beat', video='https://www.youtube.com/embed/FWriisbCKkg',
+                               description='PURE FIRE')
+
 
     @app.route('/videos/equation')
     def videos_equation():
-        return render_template('videoEquation.html')
+        return render_template('videos/videoEquation.html')
 
     # music
 
@@ -301,20 +307,20 @@ def create_app():
 
     @app.route('/pictures')
     def pictures():
-        return render_template('pictures.html', title='Pictures')
+        return render_template('pictures/pictures.html', title='Pictures')
 
     @app.route('/flamenco')
     def flamenco():
-        return render_template('flamenco.html', title="Flamenco")
+        return render_template('pictures/flamenco.html', title="Flamenco")
 
 
     @app.route('/pictures/school')
     def schoolpic():
-        return render_template('school_pictures.html', title="Paint school")
+        return render_template('pictures/school_pictures.html', title="Paint school")
 
     @app.route('/pictures/hateyhate')
     def hateyhate():
-        return render_template('sam_edge.html')
+        return render_template('pictures/sam_edge.html')
 
     # words
 
