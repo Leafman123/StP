@@ -86,7 +86,7 @@
 
             <hr>
         </div>
-
+{% block main %}
         <div class="col-md-2"></div>
 
 
@@ -105,13 +105,13 @@
                 {%- endwith %}
             {% endblock %}
 
-            {% block main %}{% block content %}{% endblock %}{% endblock %}
+            {% block content %}{% endblock %}
 
 
         </div>
 
         <div class="col-md-2"></div>
-
+{% endblock %}
     </div>
 
     <div id="footer-div" class="clearfix">

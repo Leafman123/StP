@@ -312,6 +312,10 @@ def create_app():
     def schoolpic():
         return render_template('school_pictures.html', title="Paint school")
 
+    @app.route('/pictures/hateyhate')
+    def hateyhate():
+        return render_template('sam_edge.html')
+
     # words
 
     @app.route('/words')
