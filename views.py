@@ -322,6 +322,10 @@ def create_app():
     def hateyhate():
         return render_template('pictures/sam_edge.html')
 
+    @app.route('/pictures/fen')
+    def fenbish():
+        return render_template('pictures/fen.html')
+
     # words
 
     @app.route('/words')

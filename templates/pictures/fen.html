@@ -1,0 +1,25 @@
+{% extends "prebase.html" %}
+{% from 'flask_user/_macros.html' import pictureframe %}
+{% block main %}
+    <div class="col-md-2"></div>
+    <div style=" background-color: black;
+    color: white;
+overflow: auto;" class="col-md-8">
+        {% block content %}
+
+            <h1 class="center-text">fen bisher quotes</h1>
+            <p class="center-text">-2k16</p>
+                {{ pictureframe(image_id="1",title= 'art', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisherart.jpg') }}
+                 {{ pictureframe(image_id="2",title= 'darkness', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisherdarkness.jpg') }}
+                 {{ pictureframe(image_id="3",title= 'emo', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisheremo.jpg') }}
+                 {{ pictureframe(image_id="4",title= 'hello', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisherhello.jpg') }}
+                 {{ pictureframe(image_id="5",title= 'life', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisherlife.jpg') }}
+                 {{ pictureframe(image_id="6",title= 'no', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisherno.jpg') }}
+                 {{ pictureframe(image_id="7",title= 'phase', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisherphase.jpg') }}
+                 {{ pictureframe(image_id="8",title= 'sure', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbishersure.jpg') }}
+                 {{ pictureframe(image_id="9",title= 'work', bootstrap_size='4', image_link = '/static/pictures/fenBish/fenbisherwork.jpg') }}
+
+        {% endblock %}
+    </div>
+    <div class="col-md-2"></div>
+{% endblock %}
