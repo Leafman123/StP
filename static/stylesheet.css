@@ -232,20 +232,15 @@ a:hover {text-decoration: none}
 
 @keyframes example5 {
     0% {
-        -moz-transform: translateX(70%); /* Firefox bug fix */
-        -webkit-transform: translateX(70%); /* Firefox bug fix */
-        transform: translateX(70%);
+        -moz-transform: translateX(60%); /* Firefox bug fix */
+        -webkit-transform: translateX(60%); /* Firefox bug fix */
+        transform: translateX(60%);
     }
     100% {
         -moz-transform: translateX(0%); /* Firefox bug fix */
         -webkit-transform: translateX(0%); /* Firefox bug fix */
         transform: translateX(0%);
     }
-}
-
-a div {
-    color: black;
-    text-shadow: none;
 }
 
 
