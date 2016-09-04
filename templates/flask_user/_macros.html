@@ -42,6 +42,7 @@
     >
 {%- endmacro %}
 
+
 {% macro pictureframe (image_id = none,description=none, link=none , title= none, image_link = '../static/comingSoon.png', bootstrap_size=none) %}
 
     <a {% if link %}
@@ -72,7 +73,8 @@
         </div>
     </a>
 
-    <div id="{{ image_id }}" class="modal fade" role="dialog">
+
+  <div id="{{ image_id }}" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
@@ -94,5 +96,5 @@
     </div>
 
 
-
 {% endmacro %}
+

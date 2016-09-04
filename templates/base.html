@@ -36,16 +36,17 @@
 {% block body %}
     <div id="page-wrap">
         <div id="header-wrap">
-            <div id="header-div" class="clearfix with-padding">
-
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <div class="center-text">
-                        <a style="cursor: default" href="/prune"><img src="../static/logo.png" class="no-margins"></a>
+            <div id="header-div" class="clearfix with-padding" style="overflow: auto;">
+                <div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="center-text">
+                            <a style="cursor: default" href="/prune"><img src="../static/logo.png"
+                                                                          class="no-margins"></a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-4">
+                    <div class="col-md-4">
                     <span style="position: absolute; right: 5px; top:5px;" class="item-container">
                         {% if call_or_get(current_user.is_authenticated) %}
                             <a href="{{ url_for('user.profile') }}">{{ current_user.username }}</a>
@@ -57,7 +58,9 @@
                             <a href="{{ url_for('user.login') }}">Sign in</a>
                         {% endif %}
                     </span>
+                    </div>
                 </div>
+
             </div>
 
 
@@ -86,32 +89,32 @@
 
             <hr>
         </div>
-{% block main %}
-        <div class="col-md-2"></div>
+        {% block main %}
+            <div class="col-md-2"></div>
 
 
-        <div id="main-div" class="with-padding col-md-8">
-            {# One-time system messages called Flash messages #}
-            {% block flash_messages %}
-                {%- with messages = get_flashed_messages(with_categories=true) -%}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            {% if category=='error' %}
-                                {% set category='danger' %}
-                            {% endif %}
-                            <div class="alert alert-{{ category }}">{{ message|safe }}</div>
-                        {% endfor %}
-                    {% endif %}
-                {%- endwith %}
-            {% endblock %}
+            <div id="main-div" class="with-padding col-md-8">
+                {# One-time system messages called Flash messages #}
+                {% block flash_messages %}
+                    {%- with messages = get_flashed_messages(with_categories=true) -%}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                {% if category=='error' %}
+                                    {% set category='danger' %}
+                                {% endif %}
+                                <div class="alert alert-{{ category }}">{{ message|safe }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {%- endwith %}
+                {% endblock %}
 
-            {% block content %}{% endblock %}
+                {% block content %}{% endblock %}
 
 
-        </div>
+            </div>
 
-        <div class="col-md-2"></div>
-{% endblock %}
+            <div class="col-md-2"></div>
+        {% endblock %}
     </div>
 
     <div id="footer-div" class="clearfix">

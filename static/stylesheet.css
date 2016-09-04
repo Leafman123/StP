@@ -1,4 +1,6 @@
-img{max-width: 100%}
+img {
+    max-width: 100%
+}
 
 #main-div {
     padding-bottom: 70px;
@@ -9,8 +11,10 @@ img{max-width: 100%}
     box-shadow: inset 0px -96px 67px -63px rgba(0, 0, 0, 1);
 }
 
-.top-bottom-margin{margin-top: 10px;
-margin-bottom: 10px;}
+.top-bottom-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 html, body {
     height: 100%;
@@ -141,9 +145,10 @@ h2 {
 }
 
 .item-container {
-    background: rgba(0, 0, 0, 0.23);
-    border-radius: 5px;
-    padding: 10px;
+    background: rgba(77, 77, 77, 0.58);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 15px;
     overflow: auto;
 }
 
@@ -179,18 +184,20 @@ h2 {
     background: lightcyan;
 }
 
-.menu-item-mobile a{
+.menu-item-mobile a {
     display: block;
 }
 
 .menu-item-mobile {
     font-size: 4vmax;
-    padding : 1.5vh;
+    padding: 1.5vh;
     width: 100%;
     margin-left: 0;
 }
 
-a:hover {text-decoration: none}
+a:hover {
+    text-decoration: none
+}
 
 .bouncing-container {
     height: 50px;
@@ -243,4 +250,23 @@ a:hover {text-decoration: none}
     }
 }
 
+.login-links {
+    background: rgba(77, 77, 77, 0.58);
+    margin-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 7px;
+}
 
+.row-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.col-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+}

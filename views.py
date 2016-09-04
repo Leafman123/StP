@@ -320,17 +320,21 @@ def create_app():
 
     @app.route('/pictures/hateyhate')
     def hateyhate():
-        return render_template('pictures/sam_edge.html')
+        return render_template('pictures/sam_edge.html',title = "TooEdge5Me")
 
     @app.route('/pictures/fen')
     def fenbish():
-        return render_template('pictures/fen.html')
+        return render_template('pictures/fen.html',title = "TooEdge5Me")
 
     # words
 
     @app.route('/words')
     def words():
-        return render_template('words.html', title='Words')
+        return render_template('words/words.html', title='Words')
+
+    @app.route('/words/guides')
+    def words_guides():
+        return render_template('words/guides.html', title='Guides')
 
     @app.route('/contact', methods=['POST', 'GET'])
     @login_required
