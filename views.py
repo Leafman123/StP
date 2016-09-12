@@ -276,6 +276,10 @@ def create_app():
                                video='https://www.youtube.com/embed/y2QrxXwcvBU?rel=0&amp;controls=0',
                                description="and that's how my house burnt down.")
 
+    @app.route('/videos/colin')
+    def videos_colin():
+        return render_template('videos/colin_animated.html', title='Colin the cone')
+
 
     @app.route('/videos/sik-points')
     @login_required
@@ -351,6 +355,10 @@ def create_app():
     @app.route('/prune')
     def prune_spin():
         return render_template('prune_spin.html')
+
+    @app.route('/colin')
+    def videos_rance():
+        return render_template('colin.html', title='TheRiseOfColin')
 
     # The Members page is only accessible to authenticated users
 

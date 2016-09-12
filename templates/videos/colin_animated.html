@@ -1,0 +1,35 @@
+{% extends "prebase.html" %}
+{% block main %}
+<div class="col-md-2"></div>
+
+
+            <div id="main-div" class="with-padding col-md-8">
+                {# One-time system messages called Flash messages #}
+                {% block flash_messages %}
+                    {%- with messages = get_flashed_messages(with_categories=true) -%}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                {% if category=='error' %}
+                                    {% set category='danger' %}
+                                {% endif %}
+                                <div class="alert alert-{{ category }}">{{ message|safe }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {%- endwith %}
+                {% endblock %}
+
+                <div style="text-align: center">
+        <h2 class="with-margins">Colin the cone gets badly animated</h2>
+        <div class="video-container"><iframe width=auto height=auto src="https://www.youtube.com/embed/7r4sB0SuW_E?rel=0"></iframe></div>
+        <br>
+        <hr>
+        <br>
+        <div class="description_box">This was made in a day and was mainly a test so get off my back ok?<br>
+        Also, if you wanna see the original Colin the cone <a href="/colin">Click Here</a> </div>
+    </div>
+
+
+            </div>
+
+            <div class="col-md-2"></div>
+{% endblock %}
