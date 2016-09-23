@@ -253,6 +253,7 @@ a:hover {
 .login-links {
     background: rgba(77, 77, 77, 0.58);
     margin-bottom: 0;
+    margin-right: 2px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 7px;
