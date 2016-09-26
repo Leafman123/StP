@@ -6,11 +6,10 @@
 {% block content %}
     <img src="../static/welcome.gif" class="col-centered" style="display: block; width: 100%">
     <div class="col-md-12">
-
-        <div class="col-md-7 with-padding">
+        <div class="col-md-12">
             <div class="item-container ">
                 <h2 class="no-margins center-text">MOI SUEW</h2>
-                <p><a href="{{ url_for('user.register') }}"><img style="float: right; width: 35%"
+                <p><a href="{{ url_for('user.register') }}"><img style="float: right; min-width: 200px; width: 20%"
                                                                  src="../static/mis/signup.gif"></a>Spoon the prune.
                     It's a website. On here you'll find some things that I and other people have made.
                     The
@@ -22,6 +21,9 @@
                     Then I'll never have to work because working is effort. So come on, tell your friends and search for
                     stuff.</p>
             </div>
+        </div>
+        <div class="col-md-7 with-padding">
+
             <br>
             <div class="col-md-6 center-text">
 
@@ -29,37 +31,26 @@
                 <map name="Map" id="Map">
                     <area alt="" title="" href="/worm" shape="poly" coords="110,54,107,59,110,64,118,59,119,55,115,52"/>
                 </map>
-
+                <br>
+                <p class="center-text"> WIRED</p>
+                <br>
 
             </div>
             <br>
             <div class="col-md-6">
-                <div class="item-container ">
-                    <p>
-                        <img src="/static/mis/harambe.jpg" width="60%" style="float: left" class="with-margins"
-                             onmouseover="this.src='../static/mis/harambe_ded.jpg'"
-                             onmouseout="this.src='../static/mis/harambe.jpg'"
-                             alt="harambae"/>
-
-                        <strong style="text-decoration: underline" title="rest in piecez">Harambe</strong> <br>
-                        Harambe's meme is as dead as he is.
-                    </p>
-                </div>
-
+               <a href="/buzz"><img src="../static/mis/buzz.gif"></a>
                 <br>
+                <a href="/graveyard">visit the mem grave yard</a>
             </div>
         </div>
         <div class="col-md-5 with-padding">
             <div class="item-container"><h2 class="center-text">Fruit of the week</h2>
-                <img src="../static/mis/pineapple.jpg" style="width: 7 0%">
-                <h4>Pine aplle</h4>
-                <p>What type of madman puts spikes on a fruit?</p>
-                <a href="https://s-media-cache-ak0.pinimg.com/564x/63/32/b7/6332b7a33132e5abdd7c0934773b1d8e.jpg">for the
-                true fan..</a>
+                <div class="center-text"><img src="../static/mis/pineapple.jpg" style="width: 70%;"></div>
+                <h4>Grapes return</h4>
+                <p>Honestly, I don't even like grapes that much</p>
+
             </div>
-            <br>
-            <p class="center-text"> WIRED</p>
-            <br>
+
         </div>
     </div>
 

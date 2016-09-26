@@ -301,6 +301,10 @@ def create_app():
     def videos_equation():
         return render_template('videos/videoEquation.html')
 
+    @app.route('/videos/benjackass')
+    def benjackass():
+        return render_template('videos/video_base.html', video_type='video/mp4', video_path='..\static/videos/benjamesjackass.mp4', title='benjames4lyfe', video_title='THIS IS #BenJames', description='Just an average friday')
+
     # music
 
     @app.route('/music')
@@ -354,14 +358,21 @@ def create_app():
 
     @app.route('/prune')
     def prune_spin():
-        return render_template('prune_spin.html')
+        return render_template('mis/prune_spin.html')
 
     @app.route('/colin')
     def videos_rance():
-        return render_template('colin.html', title='TheRiseOfColin')
+        return render_template('mis/colin.html', title='TheRiseOfColin')
 
     # The Members page is only accessible to authenticated users
 
+    @app.route('/buzz')
+    def rip_buzz():
+        return render_template('mis/buzz.html', title='RIP BUZZ')
+
+    @app.route('/graveyard')
+    def graveyard():
+        return render_template('mis/graveyard.html', title='so ded')
 
     return app
 

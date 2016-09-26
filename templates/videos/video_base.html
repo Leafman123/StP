@@ -2,7 +2,13 @@
 {% block content %}
     <div style="text-align: center">
         <h2 class="with-margins">{{ video_title }}</h2>
-        <div class="video-container"><iframe width=auto height=auto src="{{ video }}"></iframe></div>
+        <div class="video-container">{% if video %}
+            <iframe width=auto height=auto src="{{ video }}"></iframe>
+        {% else %}
+            <video width=100% height=auto controls>
+                <source src="{{ video_path }}" type="{{ video_type }}">
+            </video>
+        {% endif %}</div>
         <br>
         <hr>
         <br>
