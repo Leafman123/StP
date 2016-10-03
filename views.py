@@ -374,6 +374,9 @@ def create_app():
     def graveyard():
         return render_template('mis/graveyard.html', title='so ded')
 
+    @app.route('/lukas')
+    def lukas():
+        return render_template('mis/lukas.html')
     return app
 
 
