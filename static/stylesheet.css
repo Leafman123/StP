@@ -2,6 +2,7 @@ img {
     max-width: 100%
 }
 
+#modal-content{color: black;}
 #main-div {
     padding-bottom: 70px;
     background-image: url("/static/background.png");

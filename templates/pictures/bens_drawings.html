@@ -1,0 +1,18 @@
+{% extends "prebase.html" %}
+{% from 'flask_user/_macros.html' import pictureframe %}
+{% block main %}
+    <div class="col-md-2"></div>
+    <div style=" background-image: url('/static/mis/Colored_light-gray_with_wide_black_lines.png');
+overflow: auto; margin-bottom: 10px;" class="col-md-8">
+        {% block content %}
+
+            <h1 class="center-text">The Fenettes</h1>
+            <p class="center-text">The friendliest people you'll ever know. from Ben fish.</p>
+            {{ pictureframe(image_id="1",title= 'Agent Polds.', bootstrap_size='4', image_link = '/static/pictures/bens_drawings/fen1.jpg') }}
+            {{ pictureframe(image_id="2",title= 'Master baldie', bootstrap_size='4', image_link = '/static/pictures/bens_drawings/fen2.jpg') }}
+            {{ pictureframe(image_id="3",title= 'Nigel templeton', bootstrap_size='4', image_link = '/static/pictures/bens_drawings/fen3.jpg') }}
+        {% endblock %}
+
+    </div>
+    <div class="col-md-2"></div>
+{% endblock %}

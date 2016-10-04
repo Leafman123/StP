@@ -334,6 +334,10 @@ def create_app():
     def fenbish():
         return render_template('pictures/fen.html',title = "TooEdge5Me")
 
+    @app.route('/pictures/fenettes')
+    def fenettes():
+        return render_template('pictures/bens_drawings.html',title = "The Fenettes")
+
     # words
 
     @app.route('/words')
