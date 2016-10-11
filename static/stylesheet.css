@@ -146,11 +146,18 @@ h2 {
 }
 
 .item-container {
-    background: rgba(77, 77, 77, 0.58);
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    background: rgba(73, 73, 73, 0.58);
+    border-top: solid;
+    border-left: solid;
     padding: 15px;
     overflow: auto;
+}
+
+#menu-div{
+    -ms-transform: rotate(3deg); /* IE 9 */
+    -webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+    transform: rotate(3deg);
+    z-index: 5;
 }
 
 .menu {
@@ -168,17 +175,33 @@ h2 {
     padding-left: 10%;
     padding-top: 10px;
     padding-bottom: 10px;
+
 }
 
 .menu-item a:hover {
     background: lightcyan;
     text-decoration: none;
 }
-
+#header-div{background: url("../static/mis/Untitled.png")}
 .menu-item {
     margin-left: 50px;
-
     display: table-cell;
+    background-image:
+      -moz-linear-gradient(45deg, #000 25%, transparent 25%),
+      -moz-linear-gradient(-45deg, #000 25%, transparent 25%),
+      -moz-linear-gradient(45deg, transparent 75%, #000 75%),
+      -moz-linear-gradient(-45deg, transparent 75%, #000 75%);
+    background-image:
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #000), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #000), color-stop(.25, transparent)),
+      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #000)),
+      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #000));
+
+    -moz-background-size:100px 100px;
+    background-size:100px 100px;
+    -webkit-background-size:100px 101px; /* override value for shitty webkit */
+
+    background-position:0 0, 50px 0, 50px -50px, 0px 50px;
 }
 
 .menu-item-mobile:hover {
