@@ -261,6 +261,7 @@ def create_app():
     # videos
 
     @app.route('/videos')
+    @login_required
     def videos():
         return render_template('videos/videos.html', title='videos')
 
@@ -381,7 +382,14 @@ def create_app():
     @app.route('/lukas')
     def lukas():
         return render_template('mis/lukas.html')
+
+    @app.route('/memeboard')
+    def memeboard():
+        return render_template('memeboard.html')
+
     return app
+
+
 
 
 create_app()
