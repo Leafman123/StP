@@ -387,6 +387,10 @@ def create_app():
     def memeboard():
         return render_template('memeboard.html')
 
+    @app.route('/stencil')
+    def stencil():
+        return render_template('mis/stencil.html')
+
     return app
 
 
