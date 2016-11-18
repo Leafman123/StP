@@ -391,6 +391,14 @@ def create_app():
     def stencil():
         return render_template('mis/stencil.html')
 
+    @app.route('/memeroom')
+    def memeroom():
+        return render_template('mis/memeRoom.html')
+
+    @app.route('/yeahboy')
+    def yeahboy():
+        return render_template('mis/yeahboy.html')
+
     return app
 
 

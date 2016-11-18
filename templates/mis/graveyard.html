@@ -1,44 +1,47 @@
 {% extends "prebase.html" %}
 
 {% block main %}
-            <div class="col-md-2"></div>
+    <div class="col-md-2"></div>
 
 
-            <div style="background-image: url('/static/mis/graveyard.jpg'); background-size: 100% 100%" class="with-padding col-md-8">
-                {# One-time system messages called Flash messages #}
-                {% block flash_messages %}
-                    {%- with messages = get_flashed_messages(with_categories=true) -%}
-                        {% if messages %}
-                            {% for category, message in messages %}
-                                {% if category=='error' %}
-                                    {% set category='danger' %}
-                                {% endif %}
-                                <div class="alert alert-{{ category }}">{{ message|safe }}</div>
-                            {% endfor %}
+    <div style="background-image: url('/static/mis/graveyard.jpg'); background-size: 100% 100%"
+         class="with-padding col-md-8">
+        {# One-time system messages called Flash messages #}
+        {% block flash_messages %}
+            {%- with messages = get_flashed_messages(with_categories=true) -%}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category=='error' %}
+                            {% set category='danger' %}
                         {% endif %}
-                    {%- endwith %}
-                {% endblock %}
+                        <div class="alert alert-{{ category }}">{{ message|safe }}</div>
+                    {% endfor %}
+                {% endif %}
+            {%- endwith %}
+        {% endblock %}
 
-                {% block content %}
+        {% block content %}
+            <br>
+            <div style="color: ghostwhite" class="center-text">
+                <h1>THE MEME GRAVEYARD</h1>
+                <h2>Where ded memes go to be die</h2>
+
                 <br>
-                    <div style="color: ghostwhite" class="center-text">
-                    <h1>THE MEME GRAVEYARD</h1>
-                    <h2>Where ded memes go to be die</h2>
-
-                    <br>
-                    <br>
-                    <p style="text-align: left">And now, a list of some of the dead memes:</p>
-                    <ul style="text-align: left">
+                <br>
+                <p style="text-align: left">And now, a list of some of the dead memes:</p>
+                <ul style="text-align: left">
                     <li>Harambe</li>
                     <li>sammy T</li>
                     <li>dat boi</li>
                     <li>Everything that is an image with text over it</li>
-                    </ul></div>
-                    <div class="col-md-12"> <a href="/buzz"><img src="../static/mis/buzz.gif"></a></div>
-                {% endblock %}
-
-
+                    <li><a href="/yeahboy">Yee boiiiii</a></li>
+                </ul>
             </div>
-
-            <div class="col-md-2"></div>
+            <div class="col-md-12"><a href="/buzz"><img src="../static/mis/buzz.gif"></a></div>
         {% endblock %}
+
+
+    </div>
+
+    <div class="col-md-2"></div>
+{% endblock %}
