@@ -306,6 +306,10 @@ def create_app():
     def benjackass():
         return render_template('videos/video_base.html', video_type='video/mp4', video_path='..\static/videos/benjamesjackass.mp4', title='benjames4lyfe', video_title='THIS IS #BenJames', description='Just an average friday')
 
+    @app.route('/videos/periodic')
+    def periodic():
+        return render_template('videos/video_base.html', video_title='Periodic history', video='https://youtu.be/xX2TNtkBdW4',
+                               description='Its really good, I know. You dont have to tell me.')
     # music
 
     @app.route('/music')
