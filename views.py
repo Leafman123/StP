@@ -308,7 +308,7 @@ def create_app():
 
     @app.route('/videos/periodic')
     def periodic():
-        return render_template('videos/video_base.html', video_title='Periodic history', video='https://youtu.be/xX2TNtkBdW4',
+        return render_template('videos/video_base.html', video_title='Periodic history', video='https://www.youtube.com/embed/xX2TNtkBdW4',
                                description='Its really good, I know. You dont have to tell me.')
     # music
 
