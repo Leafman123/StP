@@ -1,6 +1,11 @@
 {% extends "prebase.html" %}
 {% block content %}
     {% from 'flask_user/_macros.html' import pictureframe %}
+    <map name="ifi" id="ImageMapsCom-image-maps-2017-01-21-100233">
+            <area alt="" title="" href="/worm" shape="poly"
+                  coords="111,50,109,50,107,52,105,54,105,56,105,58,107,60,109,62,111,62,113,62,115,60,117,58,117,56,117,54,115,52,113,50"
+                  src='http://www.image-maps.com/m/private/0/kp4jqd4ak44dkah3vrct7t2h81_ifi.png' />
+        </map>
     <h1 class="center-text">DJ j-sop</h1>
     <h3 class="center-text">Don't get scoped!</h3>
 
@@ -9,5 +14,23 @@
         {{ pictureframe(image_id="school1",description='',image_link = '..\static\pictures\school\groin.png', bootstrap_size='4') }}
         {{ pictureframe(image_id="school3",description="",image_link = '..\static\pictures\school/thum_man.png', bootstrap_size='4') }}
 
+    </div>
+    <div class="picture-row">
+
+
+          <a href='#' data-toggle="modal" data-target="#{{ image_id }}"
+           style="display: block">
+            <div class=" col-md-4 center-text">
+                <div class="picture-container"
+                     style="color: black">
+                    <div class="with-margins">
+
+                        <img src='..\static\pictures\school\ifi.png' ; usemap="#ifi">
+                        <br>
+                    </div>
+                    </div>
+
+            </div>
+        </a>
     </div>
 {% endblock %}

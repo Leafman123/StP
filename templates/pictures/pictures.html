@@ -1,6 +1,7 @@
 {% extends "prebase.html" %}
 {% from 'flask_user/_macros.html' import pictureframe %}
 {% block content %}
+
     <h1 class="center-text">Pretty Pictures</h1>
     <p>Pictures. It is suggested that you use your eyes for these ones.</p>
     <p>ps. blue ones are albums and you can click on um</p>
@@ -24,8 +25,14 @@
 
     </div>
     <div class="picture-row">
+        {{ pictureframe(title="Liam says eat your fruit",description="Listen to him. By someguy",image_link="..\static\pictures\liamSaysEatYourFruit.jpg",image_id="liamfruit",bootstrap_size='4') }}
         {{ pictureframe(title="The Fenettes",description="By Benjamin",image_link="../static/pictures/bens_drawings/fen1.jpg",image_id="fen1",bootstrap_size='4', link='pictures/fenettes') }}
         {{ pictureframe(link="/pictures/hateyhate",title= 'Hatey Hate', bootstrap_size='4', image_link = '/static/pictures/sam_edge/stopthat.jpg', description = "Choice cuts of beef. By sam T") }}
+
+    </div>
+    <div class="picture-row">
+        {{ pictureframe (title= 'Meaty Island', bootstrap_size='4', image_link = '..\static\pictures\meaty.jpg', description = "Shot from my recent holiday", image_id="meaty") }}
+        {{ pictureframe (title= 'My faviorite show', bootstrap_size='4', image_link = '..\static\pictures\BestTv.jpg', description = "AAAcCCCiIIIIIIDDD (ages 3+)", image_id="AACCIIDD") }}
 
     </div>
 

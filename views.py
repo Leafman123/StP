@@ -403,6 +403,14 @@ def create_app():
     def yeahboy():
         return render_template('mis/yeahboy.html')
 
+    @app.route('/nsp')
+    def nsp():
+        return render_template('mis/nspHistory.html')
+
+    @app.route('/HeLives')
+    def helives():
+        return render_template('mis/heLives.html')
+
     return app
 
 
