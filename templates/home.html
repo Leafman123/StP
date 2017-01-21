@@ -6,9 +6,10 @@
 {% block content %}
     <img src="../static/welcome.gif" class="col-centered" style="display: block; width: 100%">
     <div class="col-md-12">
-        <div class="col-md-11">
+
             <div class="item-container ">
-                <div style="position: relative; left: 0; bottom: 0;">Be a vandal wiv this <a href="/stencil">stencil</a></div>
+                <div style="position: relative; left: 0; bottom: 0;">Be a vandal wiv this <a href="/stencil">stencil</a>
+                </div>
                 <h2 class="no-margins center-text">MOI SUEW</h2>
                 <p><a href="{{ url_for('user.register') }}"><img style="float: right; min-width: 200px; width: 20%"
                                                                  src="../static/mis/signup.gif"></a>Spoon the prune.
@@ -22,17 +23,15 @@
                     Then I'll never have to work because working is effort. So come on, tell your friends and search for
                     stuff.</p>
             </div>
-        </div>
-        <div class="col-md-1"><a href="/memeboard">
-            <div style="background-color: lightpink"><p>Meme <br>board ?<br> Here. </p></div>
-        </a></div>
+
+
         <div class="col-md-7 with-padding">
 
             <br>
             <div class="col-md-6 center-text">
 
                 <h3>N_s_P </h3>
-                <a href="/nsp"><img src="/static/mis/nsp.jpg" alt="" /></a>
+                <a href="/nsp"><img src="/static/mis/nsp.jpg" alt=""/></a>
                 <br>
                 <p class="center-text"> WIRED</p>
                 <br>
@@ -62,13 +61,20 @@
 
 
     <br>
-    <div class="item-container ">
-        <h2 class="center-text no-margins">Fen Bisher Simulator</h2>
-        <br>
-        <p><img style="float: left; margin: 10px" src="../static/mis/FenSim.jpg">
-            The most cutting edge simulator game ever to be created. Staring Fen and guest staring Izzy. Directed and
-            created by shaft
-        </p>
-        <a target="_blank" href="https://scratch.mit.edu/projects/118951327/">cLick here</a>
+    <div class="col-md-8">
+        <div class="item-container with-padding">
+            <h2 class="center-text no-margins">Fen Bisher Simulator</h2>
+            <br>
+            <p><img style="float: left; margin: 10px" src="../static/mis/FenSim.jpg">
+                The most cutting edge simulator game ever to be created. Staring Fen and guest staring Izzy. Directed
+                and
+                created by shaft
+            </p>
+            <a target="_blank" href="https://scratch.mit.edu/projects/118951327/">cLick here</a>
+        </div>
+    </div>
+    <div class="col-md-4 item-container with-padding">
+        <h3>6TH form sux</h3>
+        <a href="/sixth"><img src="../static/pictures/Sixth%20Form/sixthform.png" width=100%></a>
     </div>
 {% endblock %}
