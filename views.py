@@ -410,10 +410,14 @@ def create_app():
     @app.route('/HeLives')
     def helives():
         return render_template('mis/heLives.html')
+
     @app.route('/sixth')
     def sixthfprm():
         return render_template('sixthForm.html')
 
+    @app.route('/sweden')
+    def sweden():
+        return render_template('sweden.html')
     return app
 
 
