@@ -310,6 +310,11 @@ def create_app():
     def periodic():
         return render_template('videos/video_base.html', video_title='Periodic history', video='https://www.youtube.com/embed/xX2TNtkBdW4',
                                description='Its really good, I know. You dont have to tell me.')
+
+    @app.route('/videos/plum')
+    def plumvidsam():
+        return render_template('videos/video_base.html', video_title='PLUMS', video='https://www.youtube.com/embed/M-VR-hXSJB0?rel=0&amp;controls=0&amp;showinfo=0',
+                               description='Dont cut yourself on the edge. or do . or dont . or do. or dont. or do a bit. or dont')
     # music
 
     @app.route('/music')
