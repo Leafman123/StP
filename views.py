@@ -319,8 +319,11 @@ def create_app():
 
     @app.route('/music')
     def music():
-        return render_template('music.html', title='Sounds')
+        return render_template('music/music.html', title='Sounds')
 
+    @app.route('/music/idea')
+    def musicidea():
+        return render_template('music/musicidea.html', title='Sounds')
     # pictures
 
     @app.route('/pictures')
