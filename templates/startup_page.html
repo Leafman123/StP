@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!STOP LOOK AT THE SOURCE YOU FEXKIN RUFFINA>
 <html lang="en">
 <head>
 
@@ -7,56 +8,89 @@
 
     <style>
         .wrapper {
-  height: 100%;
-  width: 100%;
-  left:0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-background-size: 1800% 1800%;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
 
--webkit-animation: rainbow 18s ease infinite;
--z-animation: rainbow 18s ease infinite;
--o-animation: rainbow 18s ease infinite;
-  animation: rainbow 18s ease infinite;}
+            -webkit-animation: rainbow 18s ease infinite;
+            -z-animation: rainbow 18s ease infinite;
+            -o-animation: rainbow 18s ease infinite;
+            animation: rainbow 18s ease infinite;
+        }
 
-@-webkit-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-moz-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
-@keyframes rainbow {
-    0%{background-position:0% 82%}
-    50%{background-position:100% 19%}
-    100%{background-position:0% 82%}
-}
+        @-webkit-keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+
+        @-moz-keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+
+        @-o-keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+
         @font-face {
             font-family: Lobster;
             src: url(../static/Lobster_1.3.otf);
         }
-        p, sub{
+
+        p, sub {
             text-align: center;
             font-family: sans-serif;
         }
-        h1{
+
+        h1 {
             text-align: center;
         }
-        span{
+
+        span {
             font-size: 300%;
             font-family: "Lobster", Serif;
         }
+
         a:link, a:visited {
             background-color: white;
             color: black;
@@ -66,7 +100,7 @@ background-size: 1800% 1800%;
             margin: auto;
             max-width: 100px;
             display: block;
-            border-radius: 5px ;
+            border-radius: 5px;
 
         }
 
@@ -78,12 +112,43 @@ background-size: 1800% 1800%;
 </head>
 <body style="color: aliceblue">
 <div class="wrapper">
-<h1> <span>Update Soon!</span>! </h1>
-<p>Don't enter unless you're a professional</p>
-<a href="/home" >E N T E R</a>
-    <div style="position: absolute; bottom: 20px; right: 20 px" >
-        <img src="../static/mis/sponcer.png">
+
+    <script type='text/javascript'>
+        var sound = document.createElement('audio')
+        sound.id = 'audio'
+        sound.controls = 'controls'
+        sound.src = '../static/music/StartupSecret.WAV'
+        sound.type = 'audio/wav'
+        document.body.appendChild(sound)
+
+        function playAudio() {
+            document.getElementById('audio').play();
+        }
+
+        setTimeout("playAudio()", 3000);
+    </script>
+    <h1 onclick="document.getElementById('dont').innerHTML = 'DONT ENTER OR DO ENTER, ITS ALL YOU BABE.' +
+     'WHAT YOU WANT TO DO AND WHERE TOULL BE. ITS ALL NAR. ENTER AND BE KNOWN YOUVE FOuND' +
+      'A THRONE'"><span>S</span>poon the <span>T</span>woon! </h1>
+    <p id="dont">Don't enter unless you're a professional</p>
+
+    <map name="image-maps-2017-03-04-152208" id="ImageMapsCom-image-maps-2017-03-04-152208">
+        <area alt="" title="Skate" href="skate" shape="rect" coords="21,33,189,254" style="outline:none;"
+              target="_self"/>
+        <area alt="" title="Tunes" href="/music" shape="rect" coords="217,27,363,261" style="outline:none;"
+              target="_self"/>
+        <area alt="" title="Peculiarly" href="/home" shape="rect" coords="409,37,566,271" style="outline:none;"
+              target="_self"/>
+        <area shape="rect" coords="577,294,579,296" alt="Image Map" style="outline:none;" title="Image Map"
+              href="http://www.image-maps.com/index.php?aff=mapped_users_0"/>
+    </map>
+    <div style="text-align: center">
+        <img style="margin: auto; position: relative" src="../static/stp.png" usemap="#image-maps-2017-03-04-152208">
     </div>
+<a href="/worm">
+    <div style="padding: 20%;"></div>
+</a>
 </div>
+
 </body>
 </html>
