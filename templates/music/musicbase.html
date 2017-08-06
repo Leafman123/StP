@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MUSICKA</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/stylesheet.css" rel="stylesheet">
+</head>
+<body style="background-color: black">
+<div style="background-color: #00b7b7;">
+    <h1 style="margin-top: 0; text-align: center; font-size: xx-large; color: white"><span style="color: #000000">You are <a href="/music">	&#9835;</a></span></h1>
+    <div class="center-text">
+        <a style="cursor: default" href="/prune"><img src="../static/logo.png" class="no-margins"></a>
+        <a href="/home" style="color: white">Go home, scum</a>
+    </div>
+    <hr color="black" style="margin-bottom: 0;">
+</div>
+
+<div>
+    <div class="col-md-2"></div>
+    <div class="col-md-8" style="background-color: #00b7b7;">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+</body>
+</html>

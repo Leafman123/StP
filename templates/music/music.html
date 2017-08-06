@@ -1,55 +1,22 @@
-{% extends "prebase.html" %}
+{% extends "music/musicbase.html" %}
 {% block content %}
-    <h1 class="center-text">Musika</h1>
-    <br>
-    <p>So ya got some exclusive sound waves below and here are some links to people how do a music
-        <a style="background-color: gold" href="https://soundcloud.com/georgehather/satin-dreams">Doctor. hather</a></p>
-    <br>
+    <p>So ya got some exclusive sound waves below and here are some links to people how do a music:
+        </p>
+    <a style="background-color: gold" href="https://soundcloud.com/reak_z">REAK-Z</a></p>
     <a href="/music/idea" style="background-color: green">IF YOU WANT AN IDEA</a>
     <br>
-    <div class="item-container clearfix">
-        <h2> DAWLESS 1 (be carefull its loud and spicy)</h2>
-        <audio controls style="display: block; max-width: 100%">
-            <source src="/static/music/DAWLESS_1.wav" type="audio/wav">
-        </audio>
-        <p>Korg volca lovin</p>
-    </div>
-    <br>
-
-    <div class="item-container clearfix" style="position: relative">
-        <div class="col-md-8">
-
-
-            <h2>Wavezone</h2>
-            <p>Made on a gutair made of waves. </p>
-            <audio controls style="display: block; max-width: 100%">
-                <source src="/static/music/Wavezone.mp3" type="audio/mpeg">
-            </audio>
-
-
+    <div>
+        <div class="col-md-6"><a href="https://www.youtube.com/playlist?list=PLCoDCFOd7FhfVAh9SDcQDJ6-s2tKeYd1C"><img
+                width="100px" src="../../static/mis/youtube.png"></a></div>
+        <div class="col-md-6"><a href="https://soundcloud.com/spoontheprune"><img width="100px" src="../../static/mis/soundcloud.jpg"></a>
         </div>
-        <div class="col-md-4">
-            <img src="../../static/music/wavezone.png" width=100% class="top-bottom-margin" style="margin-bottom: 30px">
-        </div>
-        <strong style="position: absolute; bottom: 0; display: block" class="with-margins">By Fen Bish</strong>
-        <br>
-    </div>
-
-    <br>
-
-    <div class="item-container clearfix">
-        <h2> All in</h2>
-        <audio controls style="display: block; max-width: 100%">
-            <source src="/static/music/allIn.mp3" type="audio/mpeg">
-        </audio>
-        <p>A Lil' thing for when you go all in, in poker.</p>
     </div>
     <br>
-    <div class="item-container clearfix">
-        <h2> Womber <span style="font-size: xx-small">(I think)</span> </h2>
-        <audio controls style="display: block; max-width: 100%">
-            <source src="/static/music/womber.mp3" type="audio/mpeg">
-        </audio>
-        <p>Just some practice on an 4-track app I had on my phone. Did this like 2015 so DO 0ne</p>
+    <hr>
+    <a href="/music/live"><img style="display: block; margin: 20px auto 20px;" src="../../static/mis/liveFeed.gif"></a>
+    <br>
+    <div style="margin-bottom: 50px">
+        <a href="/music/songs"><img style="margin:0 auto; width: 49%;" src="../../static/music/songs.png"></a>
+        <img style="width: 49%;" src="../../static/music/musicman.png">
     </div>
 {% endblock %}

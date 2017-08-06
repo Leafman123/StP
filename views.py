@@ -253,6 +253,10 @@ def create_app():
     def startup(template):
         return render_template(template)
 
+    @app.route('/skate')
+    def skate():
+        return render_template('skate.html')
+
     #wormhole
     @app.route('/worm')
     def wormhole():
@@ -324,6 +328,15 @@ def create_app():
     @app.route('/music/idea')
     def musicidea():
         return render_template('music/musicidea.html', title='Sounds')
+
+    @app.route('/music/songs')
+    def musicsongs():
+        return render_template('music/musicsongs.html', title='Sounds')
+
+    @app.route('/music/live')
+    def musiclive():
+        return render_template('music/musiclive.html', title='Sounds')
+
     # pictures
 
     @app.route('/pictures')
